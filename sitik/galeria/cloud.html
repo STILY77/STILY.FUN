@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how to cloudy</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      h1{
+        font-weight:normal;
+        font-size:33px;
+        text-align:center;
+        margin:50px auto;
+      }
+      p{
+        font-size:13px;
+        color:lightgray;
+        text-align:center;
+        width:min(500px,96vw);
+        height:auto;
+        margin:33px auto;
+      }
+      u{
+        font-size:17px;
+        color:white;
+      }
+      .double{
+        width:96vw;
+        height:auto;
+        margin:auto;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:13px;
+      }
+      .double p{
+        width:min(400px,96vw);
+      }
+    </style>
+  </head>
+
+  <body style="background-image:url('wallpapertexture.png');background-color:#070707;image-rendering:auto;">
+  
+    <h1>make cloudy stuff:</h1>
+    <p>
+      <u>make a gradient.</u><br>
+      you can use a gradient tool or gaussian blur.
+    </p>
+    <p>
+      <img src="cloud/gradient1.png" width=233 height=233>
+      <img src="cloud/gradient2.png" width=233 height=233>
+    </p>
+    
+    <div class="double">
+      <div>
+        <p>
+          <u>add texture with noise.</u><br>
+          this one is the "spread" noise on gimp.<br>
+          it scatters the pixels around.
+        </p>
+        <p>
+          <img src="cloud/spreadnoise1.png" width=350 height=350>
+        </p>
+      </div>
+    
+      <div>
+        <p>
+          <u>blur it together.</u><br>
+          <br>
+          <br>
+        </p>
+        <p>
+          <img src="cloud/spreadnoise2.png" width=350 height=350>
+        </p>
+      </div>
+    </div>
+    
+    <div class="double">
+      <div>
+        <p>
+          <u>create a cloudy texture.</u><br>
+          you can try any kind of perlin noise.<br>
+          this one is the "solid noise" filter on gimp.
+        </p>
+        <p>
+          <img src="cloud/solidnoise1.png" width=350 height=350>
+        </p>
+      </div>
+    
+      <div>
+        <p>
+          <u>distort it to your liking.</u><br>
+          this can be to add perspective<br>
+          or shape the cloudy texture.
+        </p>
+        <p>
+          <img src="cloud/solidnoise2.png" width=350 height=350>
+        </p>
+      </div>
+    </div>
+    
+    <p style="width:min(400px,96vw);">
+      <u>use the cloudy texture as a displacement map on the gradient.</u><br>
+      you can tweak the settings to make the texture more or less apparent.
+    </p>
+    <p>
+      <img src="cloud/displacement.png" width=370 height=541>
+    </p>
+    
+    <p>
+      <u>done.</u><br>
+      this is the result.
+    </p>
+    <p>
+      <img src="cloud/cloudy.png" width=350 height=350>
+    </p>
+    
+    <p>
+      <u>you can then do whatever you want with it.</u><br>
+    </p>
+    <p style="width:min(777px,96vw);">
+      <img src="cloud/stuff1.png" width=233 height=233>
+      <img src="cloud/stuff2.png" width=233 height=233>
+      <img src="cloud/stuff3.png" width=233 height=233>
+    </p>
+    
+  </body>
+
+</html>
