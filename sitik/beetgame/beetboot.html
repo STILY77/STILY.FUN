@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv = "refresh" content = "7; url = /beetgame/beetroot.html" />
+    <title>loading</title>
+    <link rel="icon" type="image/x-icon" href="beeticon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="prefetch" href="beetload1.gif"/>
+    <link rel="prefetch" href="beetload2.gif"/>
+    <style>
+      .beetsoft{
+        z-index:3;
+        position:fixed;
+        width:154px;
+        height:18px;
+        background-image:url('beetsoft.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:46px;
+        right:25%;
+        left:50%;
+        margin-left:-77px;
+        animation-name:appear;
+        animation-duration:2.766666s;
+        animation-timing-function:step-end;
+      }
+      
+      @keyframes appear {
+        0% {opacity:0;background-position:0 0;}
+        92% {opacity:1;background-position:0 8px;}
+        97% {opacity:1;background-position:70px 5px;}
+        100% {opacity:1;background-position:0 0;}
+      }
+      
+      .load1{
+        mix-blend-mode:screen;
+        z-index:2;
+        position:fixed;
+        width:140px;
+        height:140px;
+        background-image:url('beetload1.gif');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-110px;
+        right:25%;
+        left:50%;
+        margin-left:-70px;
+        animation-name:load;
+        animation-duration:5.666s;
+        animation-timing-function:step-end;
+      }
+      
+      .load2{
+        z-index:1;
+        position:fixed;
+        width:140px;
+        height:140px;
+        background-image:url('beetload2.gif');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-110px;
+        right:25%;
+        left:50%;
+        margin-left:-70px;
+        animation-name:load;
+        animation-duration:2.666s;
+        animation-timing-function:step-end;
+      }
+      
+      @keyframes load {
+        0% {height:0px;}
+        10% {height:0px;}
+        16% {height:16px;}
+        26% {height:34px;}
+        29% {height:42px;}
+        40% {height:55px;}
+        50% {height:70px;}
+        55% {height:82px;}
+        74% {height:90px;}
+        81% {height:112px;}
+        90% {height:120px;}
+        100% {height:140px;}
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio hidden autoplay><source src="https://cdn.discordapp.com/attachments/760039886068908052/1141926254392647700/boot.mp3" type="audio/mp3"></audio>
+    <div class="beetsoft"></div>
+    <div class="load1"></div>
+    <div class="load2"></div>
+  </body>
+
+</html>
