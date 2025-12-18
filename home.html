@@ -1,0 +1,564 @@
+<!------------------------------------------------
+Theme: Starry
+ 
+Made by STILY77 with love and sleepless nights
+ 
+Javascript sources and credits at the end
+-------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="icon" type="image/png" href="decor/blacksparkle.gif">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+        
+        <title>Depths</title>
+
+    </head>
+    
+    <body id="body" class="default">
+        
+        <div class="stars"></div>
+        
+        <div class="orbit">
+            
+            <div class="shuttle">
+                
+                <div class="capsule" style="height: 90px;">
+                    
+                    <h1>Deep Zone.....</h1>
+                    
+                    <p style="float: right;">ALL ARE WELCOME</p>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="leftfield">
+                
+                <div id="icon" class="capsule"><img class="asteroid" src="decor/eye1.jpg" style="width: 100%;"></div>
+                
+                <div class="capsule" id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content" style="display: inline;"></div></div><script src="https://status.cafe/current-status.js?name=leviathren" defer></script>
+                <script>
+                    // Replace status username with STILY77 and remove link
+                    function replaceStatusName() {
+                        var usernameDiv = document.getElementById('statuscafe-username');
+                        if (usernameDiv) {
+                            // Replace in all text nodes and links
+                            var walker = document.createTreeWalker(usernameDiv, NodeFilter.SHOW_TEXT, null, false);
+                            var node;
+                            while (node = walker.nextNode()) {
+                                if (node.textContent) {
+                                    node.textContent = node.textContent.replace(/leviathren/gi, 'STILY77');
+                                }
+                            }
+                            // Also replace in links and remove href
+                            var links = usernameDiv.querySelectorAll('a');
+                            links.forEach(function(link) {
+                                if (link.textContent) {
+                                    link.textContent = link.textContent.replace(/leviathren/gi, 'STILY77');
+                                }
+                                // Remove href but keep styling (underline)
+                                link.removeAttribute('href');
+                                link.style.cursor = 'default';
+                                link.onclick = function(e) { e.preventDefault(); return false; };
+                            });
+                        }
+                    }
+                    // Try multiple times to catch the async loading
+                    document.addEventListener('DOMContentLoaded', function() {
+                        replaceStatusName();
+                        setTimeout(replaceStatusName, 500);
+                        setTimeout(replaceStatusName, 1000);
+                        setTimeout(replaceStatusName, 2000);
+                    });
+                    // Also try on window load
+                    window.addEventListener('load', function() {
+                        setTimeout(replaceStatusName, 500);
+                        setTimeout(replaceStatusName, 1500);
+                    });
+                </script>
+
+                <div class="capsule">
+                    
+                    <p><span class="currently">21-7-2025</span>Updated credits and resources page</p>
+                    
+                </div>
+                
+                <div class="capsule">
+                    <p>The site buttons. Please don't hotlink. <a href="https://blog.hubspot.com/website/hotlinking" target="_blank" class="smt-current-element" title="what is hotlinking?" style="text-decoration: none;">[?]</a></p>
+                    <img class="asteroid" src="btns/leviathrenbutton.gif">
+                    <img class="asteroid" src="btns/ABYSSALbtn.gif">
+                </div>
+                
+                <div class="capsule">
+                    <p class="visitor-count"><a href="https://netfriend.neocities.org/visitor-count/" target="_blank" style="text-decoration: none;">&#10022;</a> You are visitor: </p>
+                    
+                    <p><a title="A map for your exploration." href="sitemap.html">Sitemap</a></p>
+
+                </div>
+                
+            </div>
+            
+            <div class="central">
+                
+                <div class="capsule">
+                    <p>Welcome.</p>
+                    <p>You have now drifted into the Deep Zone. This internet outpost is a collection of all things that interest the webmaster and a project dedicated to the <a href="https://thoughts.melonking.net/guides/introduction-to-the-web-revival-1-what-is-the-web-revival" target="_blank">Web Revival</a>.</p>
+                </div>
+                
+                <div class="rocket">
+                
+                    <div class="capsule">
+                    
+                        <p>Featured</p>
+                        <p><span class="currently">Page:</span></p>
+                        <p><span class="currently">Font:</span></p>
+                        <p><span class="currently">Community:</span></p>
+                        <p><span class="currently">Article:</span></p>
+                    
+                    </div>
+                
+                    <div class="capsule">
+                        
+                        <p>Currently</p>
+                        <p><span class="currently">Watching:</span></p>
+                        <p><span class="currently">Reading:</span></p>
+                        <p><span class="currently">Playing:</span></p>
+                        <p><span class="currently">Coding:</span></p>
+                    
+                    </div>
+                    
+                </div>
+                <div class="capsule" style="text-align: center;">* --- There you are --- *</div>
+                
+                <div class="rocket">
+                
+                    <div class="capsule">
+                    
+                        <p>"Just like how there are rules and expectations for how to behave in public due to our social contract, there are expectatoins for how people are to act in online spaces as well. Because there is no governing body that enforces rules across the entire internet, it is up to us..."</p>
+                        <p style="text-align: right; font-style: oblique; margin: 0;"><a href="blog.html#boundaries">Read More</a></p>
+                    
+                    </div>
+                    
+                    <div class="capsule">
+                        
+                        <div id="musicplayer">
+                            
+                            <img id="saturn" class="asteroid" src="decor/saturna.gif">
+
+                        <div>
+                        <marquee scrollamount="4" class="songtitle"></marquee>
+                        </div>
+
+
+                        <table class="controls">
+                            <tr>
+                                <td>
+                                    <div class="prev-track playbtn" onclick="prevTrack()">&#9198;</div>
+                                </td>
+                                <td>
+                                    <div class="playpause-track playbtn" onclick="playpauseTrack()" >&#9205;</div>
+                                </td>
+                                <td>
+                                    <div class="next-track playbtn" onclick="nextTrack()">&#9197;</div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="seeking">
+                            <div class="current-time">00:00</div>
+
+                            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+
+                            <div class="total-duration">0:00</div>
+                        </div>
+
+                        <audio id="music" preload="auto"></audio> 
+                    </div>
+                </div>
+                
+                </div>
+                
+                <div>
+                    <div id="badges">
+
+                        <img class="asteroid" src="btns/filek1.gif">
+                        <img class="asteroid" src="btns/filek2.gif">
+                        <img class="asteroid" src="btns/filek3.jpg">
+                        <img class="asteroid" src="btns/notforchildren.jpg">
+                        <img class="asteroid" src="btns/filek4.jpg">
+
+                    </div>
+
+                    <div class="follow">
+                        <a class="follow-btn" href="sitik/index.html">FOLLOW ME</a>
+                    </div>
+
+                </div>
+                
+                <div class="capsule">
+                
+                <p style="text-align: center;">Coded by STILY77 © 2025</p>
+                
+                </div>
+                
+            </div>
+            
+            <div class="rightfield">
+                
+                <nav class="capsule">
+                    
+                    <h3>Pathfinder</h3>
+                    
+                    <button class="tablinks" onclick="openTab(event, 'Me')">Me</button>
+                    <button class="tablinks" onclick="openTab(event, 'You')">You</button>
+                    <button class="tablinks" onclick="openTab(event, 'Site')">Site</button>
+                    
+                    <div id="Me" class="capsule tabcontent">
+                        <span class="close">Me — close ✖<img src="decor/blacksparkle.gif" title="Close" onclick="this.parentNode.parentNode.style.display = 'none'"></span>
+                        <ul>
+                        <li><a title="Curious about me?" href="about.html">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="You" class="capsule tabcontent">
+                        <span class="close">You — close ✖<img src="decor/blacksparkle.gif" title="Close" onclick="this.parentNode.parentNode.style.display = 'none'"></span>
+                        <ul>
+                        </ul>
+                    </div>
+                    
+                    <div id="Site" class="capsule tabcontent">
+                        <span class="close">Site — close ✖<img src="decor/blacksparkle.gif" title="Close" onclick="this.parentNode.parentNode.style.display = 'none'"></span>
+                        <ul>
+                        <li><a title="If you don't wanna get lost." href="sitemap.html">Sitemap</a></li>
+                        <li><a href="credits.html">Info &amp; Credits</a></li>
+                        </ul>
+                    </div>
+                    
+                </nav>
+                
+                <button id="theme" onclick="toggleTheme('light')" title="Brighten things up.">Face the Sun?</button>
+                
+                <div id="time" class="capsule">
+                    
+                    <h3>UTC</h3>
+                    <iframe src="https://free.timeanddate.com/clock/i9xst2xr/fn12/fs12/fc909090/tct/pct/ahl/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="89" height="31" allowtransparency="true"></iframe>
+
+                    <hr>
+                    
+                    <h3>Deep Time</h3>
+                    <iframe src="https://free.timeanddate.com/clock/i9xssezc/n137/fn12/fs12/fc909090/tct/pct/ahl/tt0/tw0/tm1/th1/ts1/ta1/tb4" frameborder="0" width="89" height="31" allowtransparency="true"></iframe>
+
+                </div>
+                
+                <div id="lastfm" class="capsule">
+                    
+                    <h3>Last Played</h3>
+                    
+                    <img id="album-cover">
+                    
+                    <p class="fm"><span class="fmicon">&#x266B; </span><span id="track"></span></p>
+                    <p class="fm"><span class="fmicon">&#128483;</span><span id="artist"></span></p>
+                    <p id="date"></p>
+                    <p id="controls"><span id="refresh" title="Refresh" onclick="window.location.reload()">&#10227;</span><span id="heart"></span></p>
+                    
+                </div>
+                
+            </div>
+            
+            <div id="depths"></div>
+            
+        </div>
+    
+        <!----- SCRIPTS ----->
+        
+        <!----- HOLLOW KNIGHT CURSORS by Newty
+        http://www.rw-designer.com/cursor-set/hollow-knight ----->
+        
+        <!----- STAR CURSORS by EdibleInk
+        http://www.rw-designer.com/cursor-set/star-1 ----->
+        
+        <!----- STYLE MY TOOLTIPS by Malihu
+        https://manos.malihu.gr/style-my-tooltips-jquery-plugin/ ----->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciR8fE=" crossorigin="anonymous"></script>
+        <script src="jquery.style-my-tooltips.js"></script>
+        <script>
+        (function($){
+        $(document).ready(function(){
+            $("[title]").style_my_tooltips({
+            tip_follows_cursor: true,
+            tip_delay_time:100,
+            tip_fade_speed:200,
+            attribute:"title"
+            });
+        });
+        })(jQuery);
+        </script>
+        
+        <!----- ROTATING STARS by Lucas Bebber
+        https://codepen.io/lbebber/pen/xbZKvQ ----->
+        <script>
+        document.addEventListener('DOMContentLoaded', function(){
+          var stars = 800;
+          var starsEl = document.querySelector(".stars");
+          if (!starsEl) return;
+
+          var r = 800;
+          var frag = document.createDocumentFragment();
+
+          for (var i = 0; i < stars; i++) {
+            var star = document.createElement("div");
+            star.className = "star";
+            frag.appendChild(star);
+          }
+
+          starsEl.appendChild(frag);
+
+          starsEl.querySelectorAll(".star").forEach(function(cur){
+            var s = 0.2 + (Math.random() * 1);
+            var curR = r + (Math.random() * 300);
+            cur.style.transformOrigin = "0 0 " + curR + "px";
+            cur.style.transform = " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")";
+          });
+        });
+        </script>
+        
+        <!----- TOGGLEABLE TABS by W3schools
+        https://www.w3schools.com/howto/howto_js_tabs.asp ----->
+        <script>function openTab(evt, tabName) {
+          // Declare all variables
+          var i, tabcontent, tablinks;
+
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var firstTab = document.querySelector('.tablinks');
+          if (firstTab) {
+            firstTab.click();
+          }
+        });</script>
+        
+        <!----- theme switcher ----->
+        <script src="themes.js"></script>
+        
+        <!----- VISITOR COUNT by netfriend
+        https://netfriend.neocities.org/visitor-count/ ----->
+        <script src="visitors.js"></script>
+        
+        
+        <!----- LASTFM NOW PLAYING by vojislav
+        https://github.com/vojislav/lastfm-now-playing ----->
+        <script src="lastfm.js"></script>
+        
+        <!----- MUSIC PLAYER by sayantanm19
+        https://github.com/sayantanm19/js-music-player/tree/master ----->
+        <script>
+        // initiate variables
+        let track_name = document.querySelector(".songtitle");
+ 
+        let playpause_btn = document.querySelector(".playpause-track");
+        let next_btn = document.querySelector(".next-track");
+        let prev_btn = document.querySelector(".prev-track");
+ 
+        let seek_slider = document.querySelector(".seek_slider");
+        let curr_time = document.querySelector(".current-time");
+        let total_duration = document.querySelector(".total-duration");
+ 
+        let track_index = 0;
+        let isPlaying = false;
+        let updateTimer;
+        
+        // create new audio element
+        let curr_track = document.getElementById("music");
+        
+        //
+        // DEFINE SONGS HERE
+        let track_list = [
+            {
+                name:"Я и одиночество - Три дня дождя",
+                path:"https://files.catbox.moe/fc20km.mp3"
+            },
+            {
+                name:"Не виноваты планеты - Три дня дождя",
+                path:"https://files.catbox.moe/k2k9q8.mp3"
+            },
+            {
+                name:"Do You Feel? - AURORA",
+                path:"https://files.catbox.moe/wnjrjf.mp3"
+            },
+            {
+                name:"snake dance - the march violets",
+                path:"https://files.catbox.moe/3n6cvj.mp3"
+            },
+            {
+                name:"nowhere to run - stegosaurus rex",
+                path:"https://files.catbox.moe/x3gczq.mp3"
+            },
+            {
+                name:"enjoy the silence - depeche mode",
+                path:"https://files.catbox.moe/avynpm.mp3"
+            },
+            {
+                name:"sad bodies - shad shadows",
+                path:"https://files.catbox.moe/7zazkp.mp3"
+            },
+            {
+                name:"matando suenos - euroshima",
+                path:"https://files.catbox.moe/8qbs80.mp3"
+            },
+            {
+               name:"major tom (coming home) - peter schilling",
+                path:"https://files.catbox.moe/lch7yk.mp3"
+            },
+            {
+               name:"into the void - buzz kill" ,
+                path:"https://files.catbox.moe/6eafgw.mp3"
+            },
+            {
+                name:"When The Dark Dresses Lightly - AURORA",
+                path:"https://files.catbox.moe/3gq8rf.mp3"
+            },
+            {
+                name:"1 2 i love you - the march violets",
+                path:"https://files.catbox.moe/u38qei.mp3"
+            },
+            {
+                name:"the storm - hante.",
+                path:"https://files.catbox.moe/8kqyhr.mp3"
+            },
+        ];
+        //
+        //
+        //
+        //
+        //
+ 
+        function loadTrack(track_index) {
+            clearInterval(updateTimer);
+            resetValues();
+ 
+            // load a new track
+            curr_track.src = track_list[track_index].path;
+            curr_track.load();
+            
+            // update details of the track
+            track_name.textContent = "playing " + (track_index + 1) + " of " + track_list.length + ": " + track_list[track_index].name;
+ 
+            // set an interval of 1000 milliseconds for updating the seek slider
+            updateTimer = setInterval(seekUpdate, 1000);
+            
+            // move to the next track if the current one finishes playing 
+            curr_track.addEventListener("ended", nextTrack);
+        }
+ 
+        // reset values
+        function resetValues() {
+            curr_time.textContent = "0:00";
+            total_duration.textContent = "0:00";
+            seek_slider.value = 0;
+        }
+ 
+        // checks if song is playing
+        function playpauseTrack() {
+            if (!isPlaying) playTrack();
+            else pauseTrack();
+        }
+ 
+        // plays track when play button is pressed
+        function playTrack() {
+            curr_track.play();
+            isPlaying = true;
+            
+            // replace icon with the pause icon
+            playpause_btn.innerHTML = '&#9208;';
+        }
+ 
+        // pauses track when pause button is pressed
+        function pauseTrack() {
+            curr_track.pause();
+            isPlaying = false;
+            
+            // replace icon with the play icon
+            playpause_btn.innerHTML = '&#9205;';
+        }
+ 
+        // moves to the next track
+        function nextTrack() {
+            if (track_index < track_list.length - 1)
+                track_index += 1;
+            else track_index = 0;
+            loadTrack(track_index);
+            playTrack();
+        }
+ 
+        // moves to the previous track
+        function prevTrack() {
+            if (track_index > 0)
+                track_index -= 1;
+            else track_index = track_list.length;
+            loadTrack(track_index);
+            playTrack();
+        }
+ 
+        // seeker slider
+        function seekTo() {
+            seekto = curr_track.duration * (seek_slider.value / 100);
+            curr_track.currentTime = seekto;
+        }
+ 
+        function seekUpdate() {
+            let seekPosition = 0;
+            
+            // check if the current track duration is a legible number
+            if (!isNaN(curr_track.duration)) {
+                seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+                seek_slider.value = seekPosition;
+                
+            // calculate the time left and the total duration
+            let currentMinutes = Math.floor(curr_track.currentTime / 60);
+            let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+            let durationMinutes = Math.floor(curr_track.duration / 60);
+            let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+                
+            // adding a zero to the single digit time values
+            if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+            if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+            if (currentMinutes < 10) { currentMinutes = currentMinutes; }
+            if (durationMinutes < 10) { durationMinutes = durationMinutes; }
+ 
+            curr_time.textContent = currentMinutes + ":" + currentSeconds;
+            total_duration.textContent = durationMinutes + ":" + durationSeconds;
+          }
+        }
+        
+        // load the first track in the tracklist
+        loadTrack(track_index);
+    </script>
+
+
+    </body>
+    
+</html>

@@ -1,0 +1,637 @@
+:root {
+    /** GENERAL **/
+    --bg: url(bg/starsprinkle.png);
+    --color: #969696;
+    --link: #969696;
+    --linkhov: #00aa88;
+    --accent: black;
+    --border: 1px solid #101010;
+    --shadow: 0 0 6px #101010;
+    
+    /** BUTTONS **/
+    --btnbg: #222222;
+    --btncl: #767676;
+    --btnbghov: #383838;
+    --btnclhov: #909090;
+    
+    /** OTHER **/
+    --capbg: rgba(0, 0, 0, 0.6);
+    --imgfilter: brightness(60%) saturate(0);
+}
+
+.light {
+    /** GENERAL **/
+    --bg: url(bg/starsprinkle.png);
+    --color: #c4c4c4;
+    --link: #c4c4c4;
+    --linkhov: #00eeaa;
+    --accent: #121212;
+    --border: 1px solid #242424;
+    --shadow: 0 0 10px #303030;
+    
+    /** BUTTONS **/
+    --btnbg: #343434;
+    --btncl: #989898;
+    --btnbghov: #4f4f4f;
+    --btnclhov: #a0a0a0;
+    
+    /** OTHER **/
+    --capbg: rgba(48, 48, 48, 0.6);
+    --imgfilter: brightness(85%) saturate(0);
+}
+
+/****** STUFF ******/
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 0px;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+}
+
+::selection {
+    background: var(--color);
+    color: black;
+}
+
+#s-m-t-tooltip {
+  /* basic */
+  max-width: 300px;
+  z-index: 10;
+  margin: 16px 14px 7px 10px;
+  /* style and design */
+  padding: 4px;
+  background: #161616;
+  /* font */
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 11px;
+  line-height: 16px;
+  color: #dddddd;
+}
+
+/****** SPACE ******/
+
+@keyframes rotate {
+  0%{
+    transform:perspective(800px) rotateZ(6deg) rotateX(-30deg) rotateY(0);
+  } 
+  100%{
+    transform:perspective(800px) rotateZ(6deg) rotateX(-30deg) rotateY(-360deg);
+  } 
+}
+
+.stars {
+  transform:perspective(900px);
+  transform-style:preserve-3d;
+  position:absolute;
+  bottom:0;
+  perspective-origin:50% 100%;
+  left:50%;
+  animation:rotate 90s infinite linear;
+  z-index: -1;
+}
+
+.star {
+  width:2px;
+  height:2px;
+  background:#bebebe;
+  position:absolute;
+  top:0;
+  left:0;
+  transform-origin:0 0 -300px;
+  transform:translate3d(0,0,-300px);
+  backface-visibility:hidden;
+}
+
+/****** WEBPAGE ******/
+
+html {
+    height: 100vh;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100vh;
+    background: var(--bg);
+    font-family: 'fira mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    color: var(--color);
+    margin: 0;
+    background-attachment: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/Normal.cur), auto;
+}
+
+/****** CONTAINERS ******/
+
+.orbit {
+    display: grid;
+    grid-template-columns: [c1] 1.8fr [c2] 4fr [c3] 1.2fr [c4];
+    grid-template-rows: [r1] 115px [r2] auto [r3];
+    grid-template-areas: 
+        "fore fore fore"
+        "port hull starboard";
+
+    position: relative;
+    width: 960px;
+    height: 866px;
+    column-gap: 25px;
+    row-gap: 20px;
+    padding: 0 180px;
+    margin: 20px auto 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.shuttle {
+    grid-area: fore;
+    position: relative;
+}
+
+.leftfield {
+    grid-area: port;
+}
+
+.central {
+    grid-area: hull;
+    padding: 0 10px 200px;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.rightfield {
+    grid-area: starboard;
+}
+
+/****** TAGS ******/
+
+nav {
+    position: relative;
+}
+
+button {
+    background: var(--btnbg);
+    font-family: monospace;
+    color: var(--btncl);
+    padding: 2px 6px;
+    border: none;
+    margin: 4px 0;
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+}
+
+button:hover {
+    background: var(--btnbghov);
+    color: var(--btnclhov);
+}
+
+h1 {
+    position: absolute;
+    bottom: 0;
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    margin: 4px 0;
+}
+
+hr {
+    border: var(--border);
+}
+
+a {
+    color: var(--link);
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+}
+
+a:hover {
+    color: var(--linkhov);
+}
+
+li {
+    list-style-type: '✦ ';
+}
+
+/****** SPECS ******/
+
+.rocket {
+    display: flex;
+    column-gap: 20px;
+}
+
+.capsule {
+    background: var(--capbg);
+    padding: 8px 12px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.currently {
+    font-weight: 800;
+    font-style: oblique;
+    margin: 0 8px 0 0;
+}
+
+.tabcontent {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 115%;
+    width: 135px;
+    padding: 0 10px 0 0;
+}
+
+.close {
+    display: flex;
+    justify-content: space-between;
+    font-style: oblique;
+    font-weight: 800;
+    padding: 12px 0 0 12px;
+}
+
+.close img:hover {
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+}
+
+.asteroid {
+    filter: var(--imgfilter);
+    transition: 0.2s ease;
+}
+
+.asteroid:hover {
+    filter: none;
+}
+
+/****** COMETS ******/
+
+#theme {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto 25px;
+}
+
+#statuscafe-username {
+    font-style: oblique;
+    font-size: 0.6rem;
+}
+
+#statuscafe-username a {
+    font-style: normal;
+    font-size: 0.8rem;
+}
+
+#album-cover {
+    display: block;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.fm {
+    text-decoration: none;
+    margin: 2px 4px 2px 0;
+}
+
+.fmicon {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 12px;
+    margin-right: 5px;
+}
+
+#date, #date a {
+    color: var(--color);
+    font-size: 0.6rem;
+    font-style: oblique;
+    margin: 4px 0;
+}
+
+.follow {
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+.follow-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #999999;
+    text-shadow: 2px 0 grey, 4px 0 #505050, 6px 0 #202020, -2px 0 grey, -4px 0 #505050, -6px 0 #202020;
+    transition: 0.3s ease;
+}
+
+.follow-btn:hover {
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+#controls {
+    text-align: right;
+    margin: 6px 0;
+}
+
+#badges {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#cbox {
+    width: 260px;
+    height: 252px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    margin: 0 20px 25px 0;
+    scrollbar-color: var(--color) var(--accent);
+    scrollbar-width: thin;
+}
+
+#saturn {
+    display: block;
+    height: 130px;
+    margin: 0 0 10px 40px;
+}
+
+#depths {
+    grid-area: hull;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    box-shadow: inset 0 -160px 100px -40px black;
+}
+
+
+/****** MUSIC PLAYER ******/
+#musicplayer {
+    height: 100%;
+    width: 180px;
+    align-content: flex-end;
+}
+
+.songtitle {
+    font-size: 0.8rem;
+}
+
+.controls {
+    font-size: 14px !important;
+    background: var(--capbg);
+    text-align: center;
+    width: 100%;
+}
+
+.seeking {
+    background: var(--capbg);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 6px 0;
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+}
+ 
+.current-time {
+    padding: 2px 4px 0 0;
+    font-size: 0.8rem;
+}
+
+.total-duration {
+    padding: 2px 0 0 4px;
+    font-size: 0.8rem;
+}
+
+.playbtn {
+    font-size: 1rem;
+    color: var(--color); 
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: var(--capbg); /* background color of seeking bar - make the color same as .seeking background color */
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+/* settings for chrome browsers */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px; /* thickness of seeking track */
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+    background: var(--color); /* color of seeking track */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 6px; /* height of seeking square */
+    width: 6px; /* width of seeking square */
+    border-radius: 1px; /* change to 5px if you want a circle seeker */
+    background: var(--link); /* color of seeker square */
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+    -webkit-appearance: none;
+    margin-top: -2.5px; 
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: var(--link);
+}
+
+/* settings for firefox browsers */
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1px; /* thickness of seeking track */
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+    background: var(--color); /* color of seeking track */
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 6px; /* height of seeking square */
+    width: 6px; /* width of seeking square */
+    border-radius: 1px; /* change to 5px if you want a circle seeker */
+    background: var(--link); /* color of seeker square */
+    cursor: url(https://leviathren.neocities.org/cursors/hollowknight/normalfill.cur), pointer;
+    border:none;
+}
+
+input[type=range]::-moz-slider-thumb:hover {
+    background: var(--link);
+}
+
+/****** RESPONSIVENESS ******/
+
+@media only screen and (max-width: 920px) {
+    
+    .stars {
+        display: none;
+    }
+    
+    .star {
+        display: none;
+    }
+    
+    /**********************/
+    
+    .orbit {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 0;
+        padding: 0;
+        margin: auto;
+    }
+    
+    .shuttle {
+        order: 1;
+    }
+
+    .leftfield {
+        order: 4;
+    }
+
+    .central {
+        order: 3;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .rightfield {
+        order: 2;
+    }
+    
+    nav.capsule {
+        position: static;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+    
+    nav h3 {
+        display: none;
+    }
+    
+    li {
+        margin-left: -10px;
+    }
+    
+    .tablinks {
+        display: none;
+    }
+    
+    .tabcontent {
+        position: static;
+    }
+    
+    #Me, #You, #Site, #Seasonal {
+        position: static;
+        display: inline-block;
+        padding: 0 10px;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .close {
+        display: block;
+    }
+    
+    .close img {
+        display: none;
+    }
+    
+    #time, #lastfm {
+        display: none;
+    }
+    
+    #icon {
+        display: none;
+    }
+    
+    #album-cover {
+        display: none;
+    }
+    
+    #badges {
+        float: right;
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0 0 0;
+    }
+    
+    #cbox {
+        width: 80%;
+        margin: 0;
+    }
+    
+    #depths {
+        display: none;
+    }
+    
+    #musicplayer {
+        width: auto;
+        align-content: flex-end;
+    }
+    
+    #saturn {
+        float: right;
+        margin: 0 20px;
+    }
+    
+    /**********************/
+    
+    .rocket, .rocket .capsule {
+        width: 100%;
+        column-gap: 0;
+    }
+
+    .capsule {
+        padding: 8px 25px;
+        margin: 0;
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+    
+    #Me, #You, #Site, #Seasonal {
+        padding: 0;
+    }
+    
+    li {
+        list-style-type: none;
+        margin-left: -20px;
+    }
+    
+    .rocket, .rocket .capsule {
+        display: block;
+        width: auto;
+    }
+}

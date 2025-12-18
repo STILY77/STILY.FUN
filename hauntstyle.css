@@ -1,0 +1,217 @@
+body {
+    background-image: url(bg/bloodsplatter.gif);
+    background-attachment: fixed;
+    cursor: url(https://cur.cursors-4u.net/holidays/hol-1/hol35.cur), auto !important;
+    color: white;
+    margin: 0;
+}
+
+img#bat {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    z-index: -1;
+}
+
+img#butterfly {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    height: 200px;
+    z-index: -1;
+}
+
+img#blood {
+    position: fixed;
+    height: 300px;
+    bottom: 30px;
+    left: 30px;
+    z-index: -1;
+}
+
+img#moon {
+    position: fixed;
+    height: 250px;
+    right: 40px;
+    top: 40px;
+    z-index: -2;
+}
+
+img#gothgirl {
+    position: fixed;
+    left: 200px;
+    bottom: 200px;
+    z-index: -1;
+}
+
+img#kiss {
+    margin: 80px auto;
+    max-width: 200px;
+}
+
+img#haunted {
+    width: 85%;
+    margin: 40px auto;
+}
+
+img#creepyhouse {
+    position: fixed;
+    width: 160px;
+    right: 80px;
+    bottom: 80px;
+    filter: brightness(50%) hue-rotate(200deg) contrast(140%) saturate(50%);
+    z-index: -1;
+}
+
+/*********** main ***********/
+
+.container {
+    display: grid;
+    grid-template-columns: [l1] 2fr [l2] 6fr [l3];
+    grid-template-rows: [t1] auto [t2];
+    grid-template-areas:
+        "nav main";
+    
+    max-width: 1000px;
+    background: #000000;
+    border: 1px solid #260000;
+    margin: auto;
+}
+
+nav {
+    grid-area: nav;
+    padding: 10px;
+    border: 4px double #640000;
+}
+
+main {
+    grid-area: main;
+    padding: 40px;
+}
+
+/**/
+
+h1 {
+    font-family: october;
+    font-size: 2.2rem;
+    letter-spacing: 0.2rem;
+}
+
+h2 {
+    font-family: october;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url(bg/ghost.png);
+    background-size: 120px;
+    padding: 20px 60px;
+    border: 4px double white;
+}
+
+h3 {
+    font-family: haunting;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+}
+
+h4 {
+    font-family: midnight;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+hr {
+    border: 2px groove #222222;
+    margin: 20px 0;
+}
+
+section {
+    padding: 25px;
+    margin: 20px 20px 50px;
+}
+
+ul li {
+    line-height: 1.4rem;
+}
+
+a {
+    color: red;
+    font-family: october;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-shadow: 0 0 4px red;
+}
+
+a:hover {
+    color: #ffcccc;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+figcaption {
+    margin: 10px;
+}
+
+/**/
+
+.orbit {
+    text-align: center;
+    margin: auto auto 40px;
+}
+
+.stamps img {
+    width: 100px
+}
+
+.divider {
+    display: flex;
+    justify-self: center;
+}
+
+.doors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.doors figure {
+    margin: 20px 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        display: block;
+    }
+    
+    nav hr {
+        display: none;
+    }
+    
+    .stamps {
+        display: none;
+    }
+    
+    #kiss {
+        display: none;
+    }
+    
+    #haunted {
+        display: none;
+    }
+    
+    main {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .doors figure {
+        width: 50%;
+        margin: 5px 0;
+    }
+}
