@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>toujours</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      #bed{filter:url(index.html);position:fixed;top:0;left:0;width:100%;height:100%;} 
+      #coloradjust{
+        pointer-events:none;
+        backdrop-filter:saturate(0%);
+        position:absolute;
+        height:200%;
+        width:200%;
+        bottom:0;
+        top:0;
+        right:0;
+        left:0;
+      }
+      #contrastadjust{
+        pointer-events:none;
+        backdrop-filter:contrast(77777%);
+        position:absolute;
+        height:200%;
+        width:200%;
+        bottom:0;
+        top:0;
+        right:0;
+        left:0;
+      }
+      #matrix{
+        pointer-events:none;
+        position:absolute;
+        height:200%;
+        width:200%;
+        bottom:0;
+        top:0;
+        right:0;
+        left:0;
+        background-image:linear-gradient(0deg,white 0%, black 30%, white 100%);
+        background-size:1px 7px;
+        background-attachment:absolute;
+        text-align:center;
+        mix-blend-mode:soft-light;
+        opacity:0.7;
+        animation-name:breathe;
+        animation-duration:35s;
+        animation-iteration-count:infinite;
+        animation-timing-function:cubic-bezier(.3,0,.7,1);
+      }
+      @keyframes breathe{
+        0%{background-size:1px calc(0.35vw + 2px);background-position:0 0;}
+        50%{background-size:1px calc(0.5vw + 3px);background-position:0 calc(0.35vw + 3px);}
+        100%{background-size:1px calc(0.35vw + 2px);background-position:0 calc(0.7vw + 6px);}
+      }
+      @media (orientation:portrait){
+        @keyframes breathe{
+        0%{background-size:1px 1.3vw;background-position:0 0;}
+        50%{background-size:1px 1.3vw;background-position:0 1.3vw;}
+        100%{background-size:1px 1.3vw;background-position:0 2.6vw;}
+        }
+      }
+      #noise{
+        pointer-events:none;
+        position:absolute;
+        height:200%;
+        width:200%;
+        bottom:0;
+        top:0;
+        right:0;
+        left:0;
+        background-image:url('noise.jpg');
+        background-size:77vh 77vh;
+        background-attachment:absolute;
+        text-align:center;
+        mix-blend-mode:soft-light;
+        opacity:0.37;
+        animation-name:scroll;
+        animation-duration:14s;
+        animation-iteration-count:infinite;
+        animation-timing-function:linear;
+      }
+      @keyframes scroll{
+        0%{background-position:0 0;}
+        100%{background-position:0 77vh;}
+      }
+      #bigfade{
+        pointer-events:none;
+        mix-blend-mode:multiply;
+        background-color:black;
+        opacity:0;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        position:absolute;
+        animation-name:fade;
+        animation-duration:28s;
+        animation-timing-function:cubic-bezier(0,.98,.43,.57);
+      }
+      @keyframes fade{
+        0%{opacity:1}
+        100%{opacity:0}
+      }
+      #one{
+        position:absolute;
+        width:40vh;
+        height:40vh;
+        background-image:url('one.png');
+        background-size:100%;
+        top:50%;
+        margin-top:-20vh;
+        left:50%;
+        margin-left:-20vh;
+        filter:brightness(0.9);
+        animation-name:floater;
+        animation-duration:5s;
+        animation-iteration-count:infinite;
+        animation-timing-function:cubic-bezier(.43,0,.43,1);
+      }
+      @keyframes floater{
+        0%{margin-top:-20.7vh;}
+        50%{margin-top:-19.3vh;}
+        100%{margin-top:-20.7vh;}
+      }
+      #wheel{
+        pointer-events:none;
+        position:absolute;
+        width:105vh;
+        height:105vh;
+        background-image:url('wheel.png');
+        background-size:100%;
+        top:50%;
+        margin-top:-52.5vh;
+        left:50%;
+        margin-left:-52.5vh;
+        opacity:0;
+        transition:opacity 21s cubic-bezier(0,.43,1,.64);
+        mix-blend-mode:screen;
+        animation-name:rotate;
+        animation-duration:63s;
+        animation-iteration-count:infinite;
+        animation-timing-function:linear;
+      }
+      #touch{
+        cursor:grab;
+        border-radius:100%;
+        width:15.2vh;
+        height:15.2vh;
+        margin-top:0.5vh;
+        margin-left:12.2vh;
+      }
+      #touch:active{cursor:grabbing;}
+      #shaker{
+        position:absolute;
+        width:40vh;
+        height:40vh;
+        top:50%;
+        margin-top:-20vh;
+        left:50%;
+        margin-left:-20vh;
+      }
+      #shaker:has(#touch:active){animation:shake 0.5s infinite;}
+      #touch:active ~ #wheel{transition:opacity 7s cubic-bezier(.35,1,1,1);opacity:0.84;}
+      @keyframes shake{
+        0%{transform:translate(0.02vw, 0.02vw) rotate(0deg);}
+        10%{transform:translate(-0.02vw, -0.04vw) rotate(-0.2deg);}
+        20%{transform:translate(-0.05vw, 0px) rotate(0.2deg);}
+        30%{transform:translate(0.05vw, 0.04vw) rotate(0deg);}
+        40%{transform:translate(0.02vw, -0.02vw) rotate(0.2deg);}
+        50%{transform:translate(-0.02vw, 0.04vw) rotate(-0.2deg);}
+        60%{transform:translate(-0.05vw, 0.02vw) rotate(0deg);}
+        70%{transform:translate(0.05vw, 0.02vw) rotate(-0.2deg);}
+        80%{transform:translate(-0.02vw, -0.02vw) rotate(0.2deg);}
+        90%{transform:translate(0.02vw, 0.04vw) rotate(0deg);}
+        100%{transform:translate(0.02vw, -0.04vw) rotate(-0.2deg);}
+      }
+      #eclipse{
+        position:absolute;
+        width:100vh;
+        height:100vh;
+        background:radial-gradient(circle,rgba(0, 0, 0, 1) 28%, rgba(42, 145, 209, 1) 30%, rgba(255, 255, 255, 1) 31%, rgba(54, 132, 163, 1) 47%, rgba(0, 26, 74, 1) 63%, rgba(0, 0, 0, 1) 79%);
+        background-size:100%;
+        top:50%;
+        margin-top:-50vh;
+        left:50%;
+        margin-left:-50vh;
+        animation-name:shift;
+        animation-duration:1.77s;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+        animation-timing-function:ease-in-out;
+      }
+      @keyframes shift{
+        0%{filter:brightness(80%) contrast(120%);}
+        100%{filter:brightness(100%) contrast(100%);}
+      }
+    </style>
+  </head>
+  
+  <body style="margin:0;padding:0;overflow:hidden;image-rendering:auto;isolation:isolate;">
+    <div id="bed">
+      <div style="width:100vw;height:100vh;background-color:black"></div>
+      <div id="eclipse"></div>
+      <div id="shaker"><div id="one"><div id="touch"></div><div id="wheel"></div></div></div>
+      <div id="bigfade"></div>
+      <div id="noise"></div>
+      <div id="matrix"></div>
+      <div id="contrastadjust"></div>
+      <div id="coloradjust"></div>
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <filter id="sea" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="1 0 0 0 0   1 0 0 0 0   1 0 0 0 0   0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+        <feComponentTransfer in="colormatrix" result="componentTransfer">
+          <feFuncR type="table" tableValues="0 0.48 0.48 0.48 0.48 0.6 0.6 1"/>
+          <feFuncG type="table" tableValues="0 0.54 0.54 0.54 0.54 0.88 0.88 1"/>
+          <feFuncB type="table" tableValues="0 1 1 1 1 0.83 0.83 1"/>
+          <feFuncA type="table" tableValues="0 1"/>
+        </feComponentTransfer>
+        <feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+      </filter>
+    </svg>
+  </body>
+
+</html>
