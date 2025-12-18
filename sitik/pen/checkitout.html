@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>check it out</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+    
+      .eulerspoiler{
+        z-index:999;
+        cursor:none;
+        position:absolute;
+        bottom:25%;
+        top:50%;
+        right:25%;
+        left:50%;
+        transform:translate(-50%,-50%)scale(1);
+        transition:transform 0.3s cubic-bezier(.83,.55,.65,1.17);
+      }
+      
+      .eulerspoiler:hover{
+        transform:translate(-50%,-50%)scale(5);
+        transition:transform 0.3s cubic-bezier(.83,.55,.65,1.17);
+      }
+      
+      .imp{
+        position:absolute;
+        bottom:25%;
+        top:50%;
+        right:25%;
+        left:50%;
+        transform:translate(-144%,-50%);
+        animation-direction:alternate;
+        animation-timing-function:linear;
+        animation-name:tilt1;
+        animation-duration:0.6s;
+        animation-iteration-count:infinite;
+      }
+      
+      @keyframes tilt1 {
+        0% {transform:rotate(1deg) scale(101.5%) translate(-142%,-50%)}
+        50% {transform:rotate(0deg) scale(100%) translate(-144%,-50%)}
+        100% {transform:rotate(-1deg) scale(101.5%) translate(-142%,-50%)}
+      }
+      
+      .omp{
+        position:absolute;
+        bottom:25%;
+        top:50%;
+        right:25%;
+        left:50%;
+        transform:translate(50%,-50%);
+        animation-delay:-0.99975s;
+        animation-direction:alternate;
+        animation-timing-function:linear;
+        animation-name:tilt2;
+        animation-duration:0.6s;
+        animation-iteration-count:infinite;
+        animation-delay:-0.99975s;
+      }
+      
+      @keyframes tilt2 {
+        0% {transform:rotate(1deg) scale(107%) translate(50%,-50%)}
+        50% {transform:rotate(0deg) scale(104%) translate(50%,-50%)}
+        100% {transform:rotate(-1deg) scale(107%) translate(50%,-50%)}
+      }
+    </style>
+  </head>
+
+  <body style="overflow: hidden;">
+    <img src="eulerspoiler.png" class="eulerspoiler">
+    <img src="imp.webp" class="imp tilt">
+    <img src="omp.webp" class="omp tilt">
+  </body>
+  
+</html>
