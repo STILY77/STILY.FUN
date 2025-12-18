@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>lua</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .moonaro{
+        z-index:2;
+        position:fixed;
+        width:600px;
+        height:600px;
+        background-image:url('moonaro.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-300px;
+        right:25%;
+        left:50%;
+        margin-left:-300px;
+      }
+      .moonarooverlay{
+        z-index:3;
+        position:fixed;
+        width:600px;
+        height:600px;
+        background-image:url('moonarooverlay.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-300px;
+        right:25%;
+        left:50%;
+        margin-left:-300px;
+        animation-direction:reverse;
+        animation-timing-function:linear;
+        animation-name:rotate;
+        animation-duration:703.333s;
+        animation-iteration-count:infinite;
+      }
+      .moon4{
+        z-index:4;
+        position:fixed;
+        width:900px;
+        height:900px;
+        background-image:url('moon4.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-450px;
+        right:25%;
+        left:50%;
+        margin-left:-450px;
+        animation-timing-function:linear;
+        animation-name:moonrotate;
+        animation-duration:59.999s;
+        animation-iteration-count:infinite;
+      }
+      .moon3{
+        z-index:5;
+        position:fixed;
+        width:900px;
+        height:900px;
+        background-image:url('moon3.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-450px;
+        right:25%;
+        left:50%;
+        margin-left:-450px;
+        animation-timing-function:linear;
+        animation-name:moonrotate;
+        animation-duration:56.666s;
+        animation-iteration-count:infinite;
+      }
+      .moon2{
+        z-index:6;
+        position:fixed;
+        width:900px;
+        height:900px;
+        background-image:url('moon2.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-450px;
+        right:25%;
+        left:50%;
+        margin-left:-450px;
+        animation-timing-function:linear;
+        animation-name:moonrotate;
+        animation-duration:53.333s;
+        animation-iteration-count:infinite;
+      }
+      .moon1{
+        z-index:7;
+        position:fixed;
+        width:900px;
+        height:900px;
+        background-image:url('moon1.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-450px;
+        right:25%;
+        left:50%;
+        margin-left:-450px;
+        animation-timing-function:linear;
+        animation-name:moonrotate;
+        animation-duration:50s;
+        animation-iteration-count:infinite;
+      }
+      .moonstars{
+        z-index:8;
+        position:fixed;
+        width:600px;
+        height:600px;
+        background-image:url('moonstars.png');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-300px;
+        right:25%;
+        left:50%;
+        margin-left:-300px;
+        animation-timing-function:linear;
+        animation-name:rotate;
+        animation-duration:903.333s;
+        animation-iteration-count:infinite;
+      }
+      .moonwater{
+        z-index:9;
+        position:fixed;
+        width:600px;
+        height:600px;
+        background-image:url('moonwater.gif');
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-300px;
+        right:25%;
+        left:50%;
+        margin-left:-300px;
+      }
+      .audiocontainer{
+        z-index:10;
+        position:fixed;
+        width:600px;
+        height:600px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-300px;
+        right:25%;
+        left:50%;
+        margin-left:-300px;
+        filter:contrast(200%) grayscale(100%) invert(100%) drop-shadow(1px 0px 0px white) drop-shadow(-1px 0px 0px white) drop-shadow(0px 1px 0px white) drop-shadow(0px -1px 0px white);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="moonaro"></div>
+    <div class="moonarooverlay"></div>
+    <div class="moon4"></div>
+    <div class="moon3"></div>
+    <div class="moon2"></div>
+    <div class="moon1"></div>
+    <div class="moonstars"></div>
+    <div class="moonwater"></div>
+    <div class="audiocontainer">
+      <audio controls loop autoplay><source src="https://upload.wikimedia.org/wikipedia/commons/5/55/Air.ogg" type="audio/ogg"></audio>
+    </div>
+  </body>
+
+</html>

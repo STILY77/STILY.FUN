@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vanish</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .image{
+        z-index:0;
+        cursor:none;
+        border-radius:100%;
+        position:fixed;
+        width:450px;
+        height:450px;
+        background-position:center;
+        background-repeat:no-repeat;
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-210px;
+        right:25%;
+        left:50%;
+        margin-left:-220px;
+        display:flex;
+        justify-content:center
+      }
+
+      .matrix{
+        z-index:2;
+        pointer-events:none;
+        position:fixed;
+        height:1000%;
+        width:1000%;
+        bottom:0;
+        top:0;
+        right:0;
+        left:0;
+        background-image:url('hatch.png');
+        background-attachment:fixed;
+        text-align:center;
+        mix-blend-mode:soft-light;
+      }
+      .contrastadjust{
+        z-index:3;
+        pointer-events:none;
+        background-color:rgba(255, 255, 255, 0);
+        backdrop-filter:brightness(77%) contrast(7777777%);
+        position:fixed;
+        height:120vh;
+        width:120vw;
+        bottom:25%;
+        top:50%;
+        margin-top:-60vh;
+        right:25%;
+        left:50%;
+        margin-left:-60vw;
+      }
+    </style>
+  </head>
+
+  <body style="margin:0">
+  
+    <div class="contrastadjust"></div>
+    <div class="matrix"></div>
+    
+    <svg class="image" style="transform: rotate(-45deg);">
+      <defs>
+        <filter id="dynamic-blur">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="0" id="blur-effect" />
+        </filter>
+      </defs>
+      <image href="/bw/skull.png" x="0" y="0" width="450" height="450" filter="url(#dynamic-blur)"/>
+    </svg>
+    
+    <script>
+      function handleMovement(event) {
+        let cursorX, cursorY;
+        
+        if (event.type === 'touchmove') {
+          cursorX = event.touches[0].clientX;
+          cursorY = event.touches[0].clientY;
+        } else {
+          cursorX = event.clientX;
+          cursorY = event.clientY;
+        }
+        
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        
+        const distanceX = Math.abs(cursorX - centerX);
+        
+        const stdDeviationX = distanceX / 5;
+        
+        const blurEffect = document.getElementById('blur-effect');
+        blurEffect.setAttribute('stdDeviation', `${stdDeviationX} 0`);
+      }
+      
+      document.addEventListener('mousemove', handleMovement);
+      document.addEventListener('touchmove', handleMovement, { passive: true });
+    </script>
+    
+  </body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reveal</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.png">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      .image{
+        z-index:0;
+        cursor:none;
+        position:fixed;
+        width:458px;
+        height:628px;
+        border-radius:100%;
+        background-image:url('sculpture.png');
+        background-position:center;
+        background-repeat:no-repeat;
+        text-align:center;
+        bottom:25%;
+        top:50%;
+        margin-top:-314px;
+        right:25%;
+        left:50%;
+        margin-left:-229px;
+      }
+
+      .matrix{
+        z-index:2;
+        pointer-events:none;
+        width:300px;
+        height:300px;
+        background-image:url('matrix2.png');
+        text-align:center;
+        mix-blend-mode:soft-light;
+        position:fixed;
+      }
+      .contrastadjust{
+        z-index:3;
+        pointer-events:none;
+        background-color:rgba(255, 255, 255, 0);
+        backdrop-filter:brightness(77%) contrast(7777777%);
+        position:fixed;
+        height:120vh;
+        width:120vw;
+        bottom:25%;
+        top:50%;
+        margin-top:-60vh;
+        right:25%;
+        left:50%;
+        margin-left:-60vw;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div class="contrastadjust"></div>
+      <div class="matrix" id="my-div"></div>
+    <div class="image"></div>
+    <script src="script.js"></script>
+  </body>
+
+</html>
