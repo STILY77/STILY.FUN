@@ -1,0 +1,171 @@
+body {
+  color:white;
+  background-color:black;
+  font-family:Courier New;
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+a:link{color:white;text-decoration:none;}
+a:visited{color:white;}
+a:hover{color:white;text-decoration:underline;}
+a:active{color:white;}
+
+::-moz-selection {
+  background:gray;
+}
+
+::selection {
+  background:gray;
+}
+
+.sphinx {
+  filter:drop-shadow(1px 0px 0px #ff8000) drop-shadow(-1px 0px 0px #0080ff);
+}
+
+.outline:hover {
+  filter:drop-shadow(1px 0px 0px white) drop-shadow(-1px 0px 0px white) drop-shadow(0px 1px 0px white) drop-shadow(0px -1px 0px white);
+}
+
+.glow:hover {
+  filter:
+    drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.7))
+    drop-shadow(1px 0px 0px rgba(255, 255, 255, 0.3)) drop-shadow(-1px 0px 0px rgba(255, 255, 255, 0.3)) drop-shadow(0px 1px 0px rgba(255, 255, 255, 0.3)) drop-shadow(0px -1px 0px rgba(255, 255, 255, 0.3));
+}
+
+.spin {
+  animation-timing-function:linear;
+  animation-name:rotate;
+  animation-duration:131.313s;
+  animation-iteration-count:infinite;
+}
+
+.counterspin {
+  animation-direction:reverse;
+  animation-timing-function:linear;
+  animation-name:rotate;
+  animation-duration:131.313s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes rotate {
+  0% {transform:rotate(0deg)}
+  100% {transform:rotate(360deg)}
+}
+
+@keyframes moonrotate {
+  0% {transform:rotate(0deg)}
+  49.99% {transform:rotate(130deg)}
+  50% {transform:rotate(230deg)}
+  100% {transform:rotate(360deg)}
+}
+
+@keyframes shake {
+  0%{transform: translate(1px, 1px) rotate(0deg)}
+  10%{transform: translate(-1px, -2px) rotate(-1deg)}
+  20%{transform: translate(-3px, 0px) rotate(1deg)}
+  30%{transform: translate(3px, 2px) rotate(0deg)}
+  40%{transform: translate(1px, -1px) rotate(1deg)}
+  50%{transform: translate(-1px, 2px) rotate(-1deg)}
+  60%{transform: translate(-3px, 1px) rotate(0deg)}
+  70%{transform: translate(3px, 1px) rotate(-1deg)}
+  80%{transform: translate(-1px, -1px) rotate(1deg)}
+  90%{transform: translate(1px, 2px) rotate(0deg)}
+  100%{transform: translate(1px, -2px) rotate(-1deg)}
+}
+
+.bounce:active {
+  transform:translate(0, 2px);
+}
+
+.bounce:hover {
+  animation-name:foda;
+  animation-duration:0.2s;
+  animation-iteration-count:1;
+}
+
+@keyframes foda {
+  0% {transform: scale(1, 1)}
+  33% {transform: scale(0.99, 1.01)}
+  66% {transform: scale(1.01, 0.99)}
+  100% {transform: scale(1, 1)}
+}
+
+.tilt {
+  animation-direction:alternate;
+  animation-timing-function:linear;
+  animation-name:tilt;
+  animation-duration:0.6s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes tilt {
+  0% {transform:rotate(1deg) scale(103%) inherit}
+  50% {transform:rotate(0deg) scale(100%) inherit}
+  100% {transform:rotate(-1deg) scale(103%) inherit}
+}
+
+.secare {
+  position:relative;
+  width:100%;
+  max-width:400px;
+  background-color:black;
+  height:auto;
+  margin:40px auto 40px auto;
+  text-align:center;
+  font-size:13px;
+  padding-top:40px;
+  padding-bottom:40px;
+  outline:3px double white;
+}
+
+.label {
+  max-width:200px;
+  height:auto;
+  margin:27px auto -13px auto;
+  text-align:center;
+  font-size:inherit;
+}
+
+.orb {
+  display:table;
+  position:fixed;
+  width:200px;
+  height:200px;
+  background:radial-gradient(closest-side,white, black);
+  text-align:center;
+  font-size:11px;
+  letter-spacing:2px;
+  text-shadow:0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black,0 0 1px black;
+  bottom:25%;
+  top:50%;
+  margin-top:-150px;
+  right:25%;
+  left:50%;
+  margin-left:-150px;
+  padding:50px;
+  animation-timing-function:cubic-bezier(.5,1.49,.3,.77);
+  animation-name:shift;
+  animation-duration:2.66s;
+  animation-iteration-count:1;
+}
+
+@keyframes shift {
+  0%{filter:blur(100px)}
+  100%{filter:blur(0px)}
+}
+
+@keyframes mainscroll {
+  0% {background-position:397px 0;}
+  100% {background-position:0 0;}
+}
+
+.ytvideo {
+  aspect-ratio: 16 / 9;
+  width:min(90%,720px);
+  }

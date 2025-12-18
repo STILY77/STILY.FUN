@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.2">
+    <title>psychic newborn</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.png">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+    
+      .absolute{position:absolute;}
+      
+      .phaser{
+        animation:phase 3.7s infinite ease-in-out alternate;
+        z-index:3;
+      }
+      
+      @keyframes phase{
+        0%{filter:brightness(97%);}
+        100%{filter:brightness(107%);}
+      }
+      
+      .shadower{
+        animation:shadow 2.2222s infinite linear alternate;
+      }
+      
+      @keyframes shadow{
+        0%{filter:brightness(50%) drop-shadow(0px 0px 15px #FFFFFF);}
+        100%{filter:brightness(96%) drop-shadow(0px 0px 10px #000);}
+      }
+      
+      .wobbler{
+        animation:wobble 1.333s infinite linear alternate;
+        filter:contrast(1.37);
+      }
+      
+      @keyframes wobble{
+        0%{transform:rotate(3deg) translate(-4px,0);}
+        25%{transform:rotate(1.5deg) translate(-2px,-5px);}
+        50%{transform:rotate(0deg) translate(0,-7px);}
+        75%{transform:rotate(-1.5deg) translate(2px,-5px);}
+        100%{transform:rotate(-3deg) translate(4px,0);}
+      }
+    
+      .floor{
+        background:linear-gradient(90deg, white 5%, black 5%);
+        background-size:20px 1px;
+        width:220vw;
+        height:380px;
+        position:absolute;
+        bottom:0;
+        right:25%;
+        left:50%;
+        margin-left:-110vw;
+        transform:matrix3d(1,0,0.00,0,0.00,0.34,0.94,-0.0052,0,-0.94,0.34,0,0,0,0,1);
+        filter:brightness(200%);
+        image-rendering:auto;
+        z-index:2;
+        outline:5px solid white;
+      }
+      
+      .dither{
+        pointer-events:none;
+        position:fixed;
+        height:120vh;
+        width:120vw;
+        background:url('cat/matrix.webp');
+        mix-blend-mode:overlay;
+        bottom:25%;
+        top:50%;
+        margin-top:-60vh;
+        right:25%;
+        left:50%;
+        margin-left:-60vw;
+        z-index:8;
+      }
+      
+      .contrast{
+        pointer-events:none;
+        background-color:rgba(255, 255, 255, 0);
+        backdrop-filter:brightness(77%) contrast(7777777%);
+        position:fixed;
+        height:120vh;
+        width:120vw;
+        bottom:25%;
+        top:50%;
+        margin-top:-60vh;
+        right:25%;
+        left:50%;
+        margin-left:-60vw;
+        z-index:9;
+      }
+      
+    </style>
+  </head>
+
+  <body style="overflow:hidden;">
+  
+    <div class="dither"></div>
+    <div class="contrast"></div>
+    
+    <img src="cat/banner.gif" class="absolute shadower" style="top:max(2vh,5px);left:50%;right:25%;margin-left:-200px;">
+    <img src="cat/plant1.webp" class="absolute phaser" style="bottom:0;left:-30px;">
+    <img src="cat/plant2.webp" class="absolute phaser" style="bottom:0;right:-30px;">
+    <img src="cat/catyawn1.webp" class="absolute wobbler" style="bottom:min(20%, 210px);left:22%;right:25%;margin-left:-210px;">
+    <img src="cat/catyawn2.webp" class="absolute wobbler" style="bottom:min(20%, 210px);left:78%;right:25%;margin-left:-210px;animation-delay:-0.99975s">
+    <a href="cat/kat/kitty.html"><img src="cat/catspin.gif" class="absolute" style="bottom:280px;left:50%;right:25%;margin-left:-86px;"></a>
+    <div class="floor" id="my-div"></div>
+    
+    <script src="cat/scriptposbg.js"></script>
+    
+  </body>
+  
+</html>

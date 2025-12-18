@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insect</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.png">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      ::-webkit-scrollbar{width:13px;}
+      ::-webkit-scrollbar-track{background:#1a1a22;}
+      ::-webkit-scrollbar-thumb{background:#33333e;width:11px;}
+      ::-webkit-scrollbar-thumb:hover{background:#272730;}
+      .furekisu{
+        width:96vw;
+        height:auto;
+        margin:4vw auto;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:space-evenly;
+        gap:4vw;
+      }
+      .blur{
+        image-rendering:auto;
+        background-size:cover;
+        width:27vw;
+        height:27vw;
+        max-width:500px;
+        max-height:500px;
+        filter:brightness(83%)contrast(163%)blur(23px)grayscale(20%);
+        transform:scale(0.97);
+        transition:filter 0.5s ease, transform 0.44s ease;
+      }
+      .blur:hover{
+        filter:brightness(100%)contrast(100%)blur(0)grayscale(0%);
+        transform:scale(1);
+        transition:filter 1s cubic-bezier(.18,1.71,.78,.49), transform 0.8s cubic-bezier(.18,1.71,.78,.49);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="
+      pointer-events:none;
+      position:fixed;
+      height:120vh;
+      width:120vw;
+      background:url('media/linesbg.gif');
+      background-size:1px 3px;
+      opacity:0.1;
+      mix-blend-mode:darken;
+      bottom:25%;
+      top:50%;
+      margin-top:-60vh;
+      right:25%;
+      left:50%;
+      margin-left:-60vw;
+      z-index:2;
+    "></div>
+    
+    <div class="furekisu">
+      <div class="blur" style="background-image:url('insect/insect1.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect2.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect3.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect4.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect5.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect6.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect7.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect8.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect9.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect10.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect11.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect12.png')"></div>
+      <div class="blur" style="background-image:url('insect/insect13.png')"></div>
+    </div>
+  </body>
+  
+</html>
